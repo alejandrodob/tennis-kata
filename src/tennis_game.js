@@ -34,7 +34,7 @@ var TennisGame = function(player1, player2) {
       if (winner()){
         var champion = self.score[0] > self.score[1] ? player1 : player2;
         return champion + ' wins!!';
-      } else if (self.score[0] > 3 || self.score[1] > 3 ) {
+      } else if (self.score[0] > 3 || self.score[1] > 3) {
         return 'Advantage ' + playerInAdvantage();
       }
       return SCORES[self.score[0]] + ' ' + SCORES[self.score[1]];

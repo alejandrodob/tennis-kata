@@ -78,7 +78,7 @@ describe("Tennis Game", function() {
 
   it("returns 'Player 1 wins!!' when player 1 scores after being in 'Advantage'", function() {
     game.nextPlay = function() {
-      game.score = [6, 5];
+      game.score = [6, 4];
     }();
 
     expect(game.getScore()).toBe('player 1 wins!!');
