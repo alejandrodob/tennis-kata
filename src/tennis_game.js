@@ -32,7 +32,8 @@ var TennisGame = function(player1, player2) {
       return evaluateTied();
     } else {
       if (winner()){
-        return player1 + ' wins!!';
+        var champion = self.score[0] > self.score[1] ? player1 : player2;
+        return champion + ' wins!!';
       } else if (self.score[0] > 3 || self.score[1] > 3 ) {
         return 'Advantage ' + playerInAdvantage();
       }
