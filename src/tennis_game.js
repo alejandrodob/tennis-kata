@@ -16,7 +16,7 @@ var TennisGame = function(player1, player2) {
   };
 
   var enoughAdvantage  = function() {
-    return ((self.score[0] - self.score[1]) > 2);
+    return (Math.abs(self.score[0] - self.score[1]) >= 2);
   };
 
   var winner = function() {
@@ -28,7 +28,6 @@ var TennisGame = function(player1, player2) {
   };
 
   self.getScore = function() {
-
     if (tied()) {
       return evaluateTied();
     } else {
