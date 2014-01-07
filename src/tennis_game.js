@@ -20,11 +20,15 @@ var TennisGame = function(player1, player2) {
   };
 
   var winner = function() {
-    return (self.score[0] > 3 || self.score[1] > 3) && enoughAdvantage();
+    return overFourteen() && enoughAdvantage();
   };
 
   var playerInAdvantage = function() {
     return self.score[0] > self.score[1] ? player1 : player2;
+  };
+
+  var overFourteen = function() {
+    return self.score[0] > 3 || self.score[1] > 3;
   };
 
   self.getScore = function() {
@@ -33,7 +37,7 @@ var TennisGame = function(player1, player2) {
     } else {
       if (winner()){
         return playerInAdvantage() + ' wins!!';
-      } else if (self.score[0] > 3 || self.score[1] > 3) {
+      } else if (overFourteen()) {
         return 'Advantage ' + playerInAdvantage();
       }
       return SCORES[self.score[0]] + ' ' + SCORES[self.score[1]];
