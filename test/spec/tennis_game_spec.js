@@ -76,6 +76,14 @@ describe("Tennis Game", function() {
     expect(game.getScore()).toBe('player 2 wins!!');
   });
 
+  it("returns 'Player 1 wins!!' when player 1 scores after being in 'Advantage'", function() {
+    game.nextPlay = function() {
+      game.score = [6, 5];
+    }();
+
+    expect(game.getScore()).toBe('player 1 wins!!');
+  });
+
 });
 
 
