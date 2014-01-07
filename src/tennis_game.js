@@ -34,10 +34,12 @@ var TennisGame = function(player1, player2) {
   self.getScore = function() {
     if (tied()) {
       return evaluateTied();
-    } else {
+    }
+    else {
       if (winner()){
         return playerInAdvantage() + ' wins!!';
-      } else if (overFourteen()) {
+      }
+      else if (overFourteen()) {
         return 'Advantage ' + playerInAdvantage();
       }
       return SCORES[self.score[0]] + ' ' + SCORES[self.score[1]];

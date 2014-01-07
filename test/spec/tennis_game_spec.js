@@ -84,6 +84,14 @@ describe("Tennis Game", function() {
     expect(game.getScore()).toBe('player 1 wins!!');
   });
 
+  it("Returns 'Thirteen - Love' if player 1 scores twice", function() {
+    game.nextPlay = function() {
+      game.score = [2, 0];
+    }();
+    
+    expect(game.getScore()).toBe('Thirteen - Love');
+  });
+
 });
 
 
