@@ -17,7 +17,7 @@ describe("Tennis Game", function() {
       game.score[0] += 1;
     }();
 
-    expect(game.getScore()).toBe('Fifteen Love');
+    expect(game.getScore()).toBe('Fifteen - Love');
   });
 
   it("return Love fifteen after player 2 scores", function(){
@@ -25,7 +25,7 @@ describe("Tennis Game", function() {
       game.score[1] += 1;
     }();
 
-    expect(game.getScore()).toBe('Love Fifteen');
+    expect(game.getScore()).toBe('Love - Fifteen');
   });
 
   it("returns 'Fifteen all' after both players score", function() {
@@ -88,7 +88,7 @@ describe("Tennis Game", function() {
     game.nextPlay = function() {
       game.score = [2, 0];
     }();
-    
+
     expect(game.getScore()).toBe('Thirteen - Love');
   });
 

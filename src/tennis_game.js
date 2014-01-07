@@ -35,15 +35,13 @@ var TennisGame = function(player1, player2) {
     if (tied()) {
       return evaluateTied();
     }
-    else {
-      if (winner()){
-        return playerInAdvantage() + ' wins!!';
-      }
-      else if (overFourteen()) {
-        return 'Advantage ' + playerInAdvantage();
-      }
-      return SCORES[self.score[0]] + ' ' + SCORES[self.score[1]];
+    if (winner()){
+      return playerInAdvantage() + ' wins!!';
     }
+    if (overFourteen()) {
+      return 'Advantage ' + playerInAdvantage();
+    }
+    return SCORES[self.score[0]] + ' - ' + SCORES[self.score[1]];
   };
 
   return self;
