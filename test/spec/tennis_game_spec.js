@@ -68,6 +68,14 @@ describe("Tennis Game", function() {
     expect(game.getScore()).toBe('player 1 wins!!');
   });
 
+  it("returns 'Player 2 wins!!' when player 2 scores the championship point", function() {
+    game.nextPlay = function() {
+      game.score = [3, 5];
+    }();
+
+    expect(game.getScore()).toBe('player 2 wins!!');
+  });
+
 });
 
 
